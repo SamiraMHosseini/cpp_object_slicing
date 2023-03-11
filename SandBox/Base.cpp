@@ -36,9 +36,9 @@ Base& Base::GetInstance2B(const ClassType& type)
 Base& Base::GetInstance2C(const ClassType& type)
 {
 	if (type == ClassType::DERIVED)
-		pInstance= (new Derived());
+		pInstance = (new Derived());
 	else
-		pInstance= (new Base());
+		pInstance = (new Base());
 	return *(pInstance);
 }
 

@@ -10,7 +10,7 @@ int main()
 
 	const Base& tempB = Base::GetInstance2B(ClassType::DERIVED); //No object slicing
 
-	const Base& tempC = Base::GetInstance2B(ClassType::DERIVED); //No object slicing
+	const Base& tempC = Base::GetInstance2C(ClassType::DERIVED); //No object slicing
 
 	const Base object2 = Base::GetInstance2A(ClassType::DERIVED); //This causes object slicing
 
@@ -45,17 +45,17 @@ int main()
 	delete deleteMe;
 	delete (&tempC);
 	/*
-	When you slice a derived class object and assign it to a base class object, 
-	the derived class information is lost, and you are left with a base class object. 
-	When you try to delete the sliced base class object, the type of the object being deleted does not match 
-	the type of the object that was originally allocated (which was a derived class object), and this results 
+	When you slice a derived class object and assign it to a base class object,
+	the derived class information is lost, and you are left with a base class object.
+	When you try to delete the sliced base class object, the type of the object being deleted does not match
+	the type of the object that was originally allocated (which was a derived class object), and this results
 	in a runtime error.
 
-     In conclusion, to avoid this issue, it's always recommended to use references or pointers 
+	 In conclusion, to avoid this issue, it's always recommended to use references or pointers
 	 to prevent slicing and ensure that the object being deleted is of the same type as the object that
 	 was originally allocated.
 
-	
+
 	*/
 
 	//The following causes object slicing and by invoking delete actually we're deleting Base part not Derived part
