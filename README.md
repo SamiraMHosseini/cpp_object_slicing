@@ -6,6 +6,6 @@ Object slicing is a phenomenon in C++ where the derived class object is treated 
 
 1) Use references or pointers instead of values: When you pass a derived class object by reference or pointer, it will not be sliced and the original object will be preserved.
 
-2)Make the base class virtual: By declaring the base class as virtual, the derived class object will be sliced to the most derived class and the behavior of the most derived class will be preserved.
+2) Make the base class virtual: By declaring the base class as virtual, the derived class object will be sliced to the most derived class and the behavior of the most derived class will be preserved.
 
 3) Make the base class's copy constructor and assignment operator private: By making the base class's copy constructor and assignment operator private, you can prevent slicing by preventing the copying of objects.
